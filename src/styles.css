@@ -1,0 +1,15 @@
+.container.ant-layout {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.site-layout {
+  background: #fff;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

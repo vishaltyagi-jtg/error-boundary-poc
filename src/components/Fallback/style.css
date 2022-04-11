@@ -1,0 +1,13 @@
+.error-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0 1rem;
+}
+
+.error-image img {
+    width: 100%;
+}
+
+.fallback-wrapper{
+    min-height: 100vh !important;
+}

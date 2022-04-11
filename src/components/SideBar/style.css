@@ -1,0 +1,7 @@
+.logo {
+  margin: 16px;
+  color: white;
+}
+.logo--collapsed {
+  margin: 16px 8px;
+}
