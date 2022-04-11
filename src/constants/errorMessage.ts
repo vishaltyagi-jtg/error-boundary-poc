@@ -1,6 +1,6 @@
 
 export const ERROR_NAME = {
-    CHUNK_LOAD: 'CHUNK_LOADError',
+    CHUNK_LOAD: 'ChunkLoadError',
     PERMISSION_DENIED : 'permission-denied',
     DEFAULT_ERROR: 'default',
 }
