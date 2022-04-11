@@ -1,11 +1,10 @@
 import "./styles.css";
 import SideBar from "./components/SideBar";
-import Content from "./components/Content";
 import Header from "./components/Header";
 import "antd/dist/antd.css";
 import { Layout } from "antd";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './utils/stringMethod';
 import { lazy } from "react";
 import withSuspense from "./HOC/withSuspense";
@@ -29,6 +28,7 @@ export default function App() {
             <Route path="/option1" element={<PageOne />}/>
             <Route path="/option2" element={<PageTwo />}/>
             <Route path="/option3" element={<PageThree />}/>
+            <Route path="*" element={<Navigate to="/option1" replace />} />
           </Routes>
         </Layout>
       </Layout>

@@ -4,37 +4,44 @@ import "./style.css";
 import {
   DesktopOutlined,
   PieChartOutlined,
-  FileOutlined
+  FileOutlined,
 } from "@ant-design/icons";
-import {useNavigate, useLocation} from 'react-router-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 const { Sider } = Layout;
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(true);
-  const [defaultSelectedKey, setSelectedKey] = useState('1');
+  const [defaultSelectedKey, setSelectedKey] = useState("1");
 
   const navigate = useNavigate();
-  const {pathname} = useLocation();
-  useEffect(()=>{
+  const { pathname } = useLocation();
+  useEffect(() => {
     const pathLength = pathname.length;
-
-    setSelectedKey(pathname.slice(pathLength-1, pathLength));
-  },[])
+    const key = pathname.slice(pathLength - 1, pathLength);
+    if (["1", "2", "3"].indexOf(key) > -1) {
+      setSelectedKey(key);
+    }
+  }, []);
 
   const onCollapse = () => {
     setCollapsed(!collapsed);
   };
-  
-  const handleMenuChange = ({key}:{key: string})=>{
+
+  const handleMenuChange = ({ key }: { key: string }) => {
     setSelectedKey(key);
-    navigate(`/option${key}`)
-  }
+    navigate(`/option${key}`);
+  };
 
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
       <h1 className={`logo ${collapsed ? `logo--collapsed` : ""}`}>SideBar</h1>
-      <Menu theme="dark" mode="inline" onSelect={handleMenuChange} selectedKeys={[defaultSelectedKey]}>
+      <Menu
+        theme="dark"
+        mode="inline"
+        onSelect={handleMenuChange}
+        selectedKeys={[defaultSelectedKey]}
+      >
         <Menu.Item key="1" icon={<PieChartOutlined />}>
           Option 1
         </Menu.Item>
