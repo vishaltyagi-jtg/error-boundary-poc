@@ -1,7 +1,8 @@
 import React from 'react'
 import Content from '../../components/Content'
 import withErrorBoundary from '../../HOC/withErrorBoundary';
-function PageOne() {
+
+const  PageOne = () => {
   return (
     <Content />
   )

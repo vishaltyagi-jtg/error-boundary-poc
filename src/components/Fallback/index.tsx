@@ -10,7 +10,7 @@ interface Props {
   message?: string;
 }
 
-function Fallback(props: Props) {
+const  Fallback = (props: Props) => {
   const defaultMessage = "Something Went wrong. Please try again later";
   const { message = defaultMessage } = props;
 

@@ -6,10 +6,13 @@ import "antd/dist/antd.css";
 import { Layout } from "antd";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PageOne from "./pages/page1";
-import PageTwo from "./pages/page2";
-import PageThree from "./pages/page3";
 import './utils/stringMethod';
+import { lazy } from "react";
+import withSuspense from "./HOC/withSuspense";
+
+const PageOne = withSuspense(lazy(()=> import("./pages/page1")));
+const PageTwo = withSuspense(lazy(()=> import("./pages/page2")));
+const PageThree = withSuspense(lazy(()=> import("./pages/page3")));
 
 export default function App() {
   return (

@@ -18,7 +18,7 @@ const SideBar = () => {
   const {pathname} = useLocation();
   useEffect(()=>{
     const pathLength = pathname.length;
-    console.log(pathname.slice(pathLength-1, pathLength));
+
     setSelectedKey(pathname.slice(pathLength-1, pathLength));
   },[])
 

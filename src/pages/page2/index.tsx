@@ -5,7 +5,7 @@ import withErrorBoundary from "../../HOC/withErrorBoundary";
 import { getErrorParser } from "../../services/fault.service";
 import './style.css';
 
-function PageTwo() {
+const PageTwo = () => {
   const [count, setCount] = useState(0);
   const handleClick = () => {
       try{
